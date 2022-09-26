@@ -1,0 +1,37 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Lalezar&family=Noto+Sans&family=Tajawal:wght@300;400;700&display=swap');
+body{
+    background: #FFB200;
+}
+.xo{
+    width: 255px;
+    text-align: center;
+    font-family: font-family: 'Bungee Spice', cursive;
+    font-family: 'Lalezar', cursive;
+    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Tajawal', sans-serif;
+    color: white;
+    margin: auto;
+    font-weight: 500;
+}
+.title{
+    background: #3120E0;
+    padding: 5px 0;
+    margin: 5px 0;
+    font-size: 30px;
+}
+span{
+    color: #FFB200;
+}
+.square{
+    width: 80px;
+    height: 80px;
+    background: #3120E0;
+    float: left;
+    margin: 2.4px;
+    font-size: 50px;
+}
+.square:hover{
+    background: #002B5B;
+    cursor: pointer;
+}
