@@ -1,0 +1,63 @@
+.card-article{
+    width: 48% !important; 
+}
+/* ---------------- */
+/*        main      */
+/* ---------------- */
+.greeting {
+    margin-bottom: 2rem;
+  }
+  .dishes {
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
+  .dish {
+    background: var(--bg-clr-light);
+    align-items: center;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  .dish__img {
+    flex-basis: 80px;
+  }
+  .dish-count {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.8rem;
+  }
+  .ratings > h2 {
+    margin-bottom: 2rem;
+  }
+  .reviews {
+    flex-direction: column;
+  }
+  .review {
+    margin-bottom: 2rem;
+  }
+  .review-name {
+    margin-bottom: 1rem;
+  }
+  .review h4 {
+    font-size: 30px;
+  }
+  .rate-row {
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  .rate-row span {
+    white-space: nowrap;
+  }
+  .rate-back {
+    background: var(--bg-clr-light);
+    height: 10px;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+  }
+  .rate-range {
+    background: var(--main-clr);
+    height: 10px;
+    border-radius: 10px;
+  }
+
+

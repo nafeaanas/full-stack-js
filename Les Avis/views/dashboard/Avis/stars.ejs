@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap">
+    <link rel="stylesheet" href="/public/css/Avis.css">
+    <title>Document</title>
+</head>
+
+<style>
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.center{
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.center .stars{
+  height: 150px;
+  width: 500px;
+  text-align: center;
+}
+.stars input{
+  display: none;
+}
+.stars label{
+  float: right;
+  font-size: 100px;
+  color: lightgrey;
+  margin: 0 5px;
+  text-shadow: 1px 1px #bbb;
+}
+.stars label:before{
+  content: '★';
+}
+.stars input:checked ~ label{
+  color: gold;
+  text-shadow: 1px 1px #c60;
+}
+.stars:not(:checked) > label:hover,
+.stars:not(:checked) > label:hover ~ label{
+  color: gold;
+}
+.stars input:checked > label:hover,
+.stars input:checked > label:hover ~ label{
+  color: gold;
+  text-shadow: 1px 1px goldenrod;
+}
+.stars .result:before{
+  position: absolute;
+  content: "";
+  width: 100%;
+  left: 50%;
+  transform: translateX(-47%);
+  bottom: -30px;
+  font-size: 30px;
+  font-weight: 500;
+  color: gold;
+  font-family: 'Poppins', sans-serif;
+  display: none;
+}
+.stars input:checked ~ .result:before{
+  display: block;
+}
+.stars #five:checked ~ .result:before{
+  content: "I love it ";
+}
+.stars #four:checked ~ .result:before{
+  content: "I like it  ";
+}
+.stars #three:checked ~ .result:before{
+  content: "It's good ";
+}
+.stars #two:checked ~ .result:before{
+  content: "I don't like it ";
+}
+.stars #one:checked ~ .result:before{
+  content: "I hate it ";
+}
+
+</style>
+<body>
+        <div class="center">
+        <div class="stars">
+          <input class="stars-item" data-rate="5"  type="radio" id="five" name="rate" value="I love it">
+          <label for="five"></label>
+          <input class="stars-item active" data-rate="4"type="radio" id="four" name="rate" value="I like it ">
+          <label for="four"></label>
+          <input class="stars-item" data-rate="3"type="radio" id="three" name="rate" value="It's good">
+          <label for="three"></label>
+          <input class="stars-item" data-rate="2"type="radio" id="two" name="rate" value="I don't like it">
+          <label for="two"></label>
+          <input class="stars-item" data-rate="1"type="radio" id="one" name="rate" value="I hate it">
+          <label for="one"></label>
+          <span class="result"></span>
+        </div>
+     </div>
+     <script>
+      const container = document.querySelector('.stars');
+      const items = container.querySelectorAll('.stars-item')
+      container.onclick = e => {
+      const elClass = e.target.classList;
+      // change the rating if the user clicks on a different star
+      if (!elClass.contains('active')) {
+      items.forEach( // reset the active class on the star
+      item => item.classList.remove('active')
+      );
+      console.log(e.target.getAttribute("data-rate"));
+      elClass.add('active'); // add active class to the clicked star
+      }
+      };
+      </script>
+
+
+
+      <!-- <script src="//public/js/Avie.js"></script> -->
+</body>
+</html>
+
+
+
+    
+
+

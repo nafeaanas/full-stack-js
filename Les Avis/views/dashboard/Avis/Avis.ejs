@@ -1,0 +1,83 @@
+<%- include('../../partials/headadmin.ejs') %>
+
+<body>
+    <div id="app">
+        <div id="sidebar" class="active">
+            <div class="sidebar-wrapper active">
+                <div class="sidebar-header">
+                    <div class="d-flex justify-content-between">
+                        <div class="logo">
+                            <a href="index.html"><img src="assets/images/logo/logo.png" alt="Logo" srcset=""></a>
+                        </div>
+                        <div class="toggler">
+                            <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <%- include('../../partials/sidebar.ejs') %>
+
+                <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
+            </div>
+        </div>
+        <div id="main">
+            <header class="mb-3">
+                <a href="#" class="burger-btn d-block d-xl-none">
+                    <i class="bi bi-justify fs-3"></i>
+                </a>
+            </header>
+
+            <div class="page-heading">
+                <h3>les avis</h3>
+            </div>
+            <div class="page-content">
+                <section class="row">
+                    <div class="col-12 col-lg-12">
+                        
+                        <div class="row">
+                            <div class="col-12 col-xl-12">
+                                <div class="card">
+                                    <div class="card-header d-flex justify-content-between">
+                                        <h4>les avis</h4>
+                                        <a href="/addAvie" class="btn btn-primary">Ajouter Avis</a>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table table-hover table-lg">
+                                                <thead>
+                                                    <tr>
+
+                                                        <th>Avie</th>
+                                                        <th></th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    
+                                                    <% for(allavie of avie) { %>
+                                                    <tr>
+                                                        <td class="col-3">
+                                                            <%= allavie.avie %>
+                                                        </td>
+                            
+                                                        <td>
+                                                            <a href="/getAvi/<%= allavie.id %>" class="btn btn-info btn-sm">update</a>
+                                                            <a class="btn btn-danger btn-sm" href='/delete/<%= allavie.id %>'>delete</a>
+                                                            <a class="btn btn-info btn-sm" href='/viewAvie/<%= avie.id %>'>view</a>
+                                                        </td>
+                                                    </tr>
+                                                    <% } %> 
+                                    
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+<%- include('../../partials/footerAdmin.ejs') %>
+            
