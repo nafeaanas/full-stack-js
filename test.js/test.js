@@ -1,14 +1,16 @@
-let array = [13,7,18,56,84,93,9,35,40];
-let val = 56;
-let x;
-for (let i = 0 ; i<array.length ; i++){
-    for(let j = 1 ; j<array.length-i ; j++){
-        if(array[j-1]>array[j]){
-        x = array[j-1];
-        array[j-1] = array[j];
-        array[j] = x
-        }
-    }
+
+let arr=[12,9,1,-3,5,24]
+
+for(let i=0;i<arr.length;i++){
+    let min=i
+    for(let j=i+1;j<arr.length;j++){
+if(arr[j]<arr[min]){
+min=j
+}if(min!=i){
+    let temp=arr[i]
+    arr[i]=arr[min]
+    arr[min]=temp
 }
-
-
+}
+}
+console.log(arr)

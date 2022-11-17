@@ -34,7 +34,7 @@ const resetPasswordEmail = (name, email, token ) => {
     transport.sendMail({
         from: user,
         to: email,
-        subject: "Please confirm your account",
+        subject: "Please reset your password",
         html: `<h1>RESET PASSWORD</h1>
             <h2>Hello ${name}</h2>
             <p>plaise n'oblier pas le code the next time</p>

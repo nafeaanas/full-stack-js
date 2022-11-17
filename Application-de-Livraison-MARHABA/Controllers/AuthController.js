@@ -84,7 +84,7 @@ const Register =  asyncHandler (async(req,res) => {
                 newUser.token ,
                 newUser.id  
          ); 
-            return res.status(401).send({
+            return res.status(200).send({
               message: "Pending Account. Please Verify Your Email!",
             });
           }
@@ -101,7 +101,7 @@ const ForgetPassword = asyncHandler(async (req,res) => {
     const {email} = req.body
     console.log(req.body)
     if(!email ){
-        res.status(400)
+        res.status(200)
         throw new Error("Please add a text field")
     } 
     const user = await User.findOne({email})
@@ -154,7 +154,8 @@ const Verify = async  (req,res) => {
     if(user.verified == false  && user.token == token){
         user.verified = true
         user.save()
-        res.status(200).send('your account is verified')
+        // res.status(200).send('your account is verified')
+        return res.redirect("http://localhost:3000/")
     }else{
         res.status(400).send('token not valid')
     }
