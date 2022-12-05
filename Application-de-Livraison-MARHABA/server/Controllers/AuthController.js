@@ -16,6 +16,11 @@ const Login = asyncHandler (async (req, res) => {
     // console.log(req.body)          
     const {email, password} = req.body
     const user = await User.findOne({email})
+    if (!password || !email) {
+        res.status(400)
+            throw new Error('User not verified')
+        
+    }
     // console.log(user)
     if(user  && (await bcrypt.compare(password, user.password)) ){
         const token = generateToken(user._id)
@@ -28,7 +33,7 @@ const Login = asyncHandler (async (req, res) => {
         const role = await Role.findById(user.roles[0])
         console.log("rolename djdjdjdjjdjj ",user.roles[0])
         if (user.verified == true) {
-            res.json({
+            res.statut(200).json({
                 _id: user._id,
                 name: user.name,
                 email: user.email ,
@@ -44,7 +49,7 @@ const Login = asyncHandler (async (req, res) => {
 
     }
     else{
-        res.status(401)
+        res.status(402)
         throw new Error('Invalid email or password')
     }
 }) 
