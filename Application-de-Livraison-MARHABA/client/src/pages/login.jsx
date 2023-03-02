@@ -58,7 +58,7 @@ export default function Login() {
                             console.log(result.data)
                             cookies.set("TOKEN", result.data.token, {
                                 path: "/",
-                              })
+                                })
                             // setLogin(true);
                             window.location.href = "/home";
                             // setRegister(true);
@@ -72,36 +72,7 @@ export default function Login() {
                         });
             }
         };
-    // const [email, setEmail] = useState("");
-    // const [password, setPassword] = useState("");
-    // const [login, setLogin] = useState(false);
-    // const [error, setError] = useState(null);
 
-    // const handleSubmit = (e) => {
-    //     // set configurations
-    //     const configuration = {
-    //         method: "POST",
-    //         url: "http://localhost:8000/api/auth/login",
-    //         data: {
-    //             email,
-    //             password,
-    //         },
-    //     };
-    //     axios(configuration)
-    //         .then((result) => {
-    //             console.log(result.data)
-    //             setLogin(true);
-    //         })
-    //         .catch((error) => {
-    //             setLogin(false);
-    //             console.log(error);
-    //             console.log(error.response.data.message);
-    //             setError(error.response.data.message);
-    //             error = new Error();
-    //         });
-
-    //     e.preventDefault();
-    // }
     return (
         <div className='grid grid-cols-1 sm:grid-cols-2 h-screen w-full'>
             <div className='hidden sm:block'>

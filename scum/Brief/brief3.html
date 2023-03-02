@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rechercher une meuble chez JJ</title>
+    <link rel="stylesheet" type="text/css" href="Stayl.css">
+</head>
+<body>
+<header><h1 id="site-title">Bienvenu chez JJ Immobiler</h1></header>
+<main>
+<div id="form-containner">
+        <h2 id="search-form-title">Rechercher un immobilier</h2>
+        <form id="search-form" method="GET" action="#">
+            <div class="form-top-section">
+                <div class="form-row">
+                    <!-- choix de l'interval de prix-->
+                    <select name="prix" class="select" id="search-select-prix">
+                        <option value="0">Choix de prix</option>
+                        <option value="1">moins de 10000$</option>
+                        <option value="2">entre 10000$ et 20000$</option>
+                        <option value="3">plus de 20000$</option>
+                    </select>
+                </div>
+                <div class="form-row" id="form-input-row-nbr-chambres">
+                    <!-- choix du nombre des chanmbres-->
+                    <input type="number" name="chambres" class="input" placeholder="chambres :"/>
+                </div>
+                <div class="form-row">
+                    <!-- choix de type de propreté-->
+                    <select name="type-de-propriete" class="select">
+                        <option value="0">type de propriété</option>
+                        <option value="1">Immo Neuf</option>
+                        <option value="2">Appartements</option>
+                        <option value="3">Maisons Et Villas</option>
+                        <option value="4">Bureaux Et Plateaux </option>
+                        <option value="5">Magasins, Commerces Et Locaux Industriels</option>
+                        <option value="6">Terrains Et Fermes</option>
+                        <option value="7">Locations De Vacances</option>
+                        <option value="8">Colocations</option>
+                        <option value="9">Autre Immobilier</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-bottom-section">
+                <div class="form-row">
+                    <!-- rayon de la recherche-->
+                    <input id="form-input-search" class="input" type="text" placeholder="mots de votre recherche ..."/>
+                </div>
+                <div class="form-row">
+                    <!-- rayon de la recherche-->
+                    <input type="submit" value="Rechercher" class="submit-btn"/>
+                </div>
+
+            </div>
+
+    </form>
+    </div>
+</main>
+</body>
